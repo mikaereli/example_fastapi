@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
 
-# Определение сущностей
+# Defining entities
 
 class User(BaseModel):
     id: int
@@ -17,12 +17,12 @@ class Order(BaseModel):
 
 app = FastAPI()
 
-# Создание списков users и orders для хранения сущностей
+# Create lists "users" and "orders" for saving entities
 
 users: List[User] = []
 orders: List[Order] = []
 
-# HTTP-обработчики
+# HTTP-handler
 
 @app.post("/users")
 async def create_user(name: str):
